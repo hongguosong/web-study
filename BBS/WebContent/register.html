@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS3动态背景登录框代码</title>
+
+<link rel="stylesheet" type="text/css" href="css/loginStyle.css">
+<style type="text/css">
+body,td,th { font-family: "Source Sans Pro", sans-serif; }
+body { background-color: #2B2B2B; }
+</style>
+</head>
+<body>
+
+
+<div class="wrapper">
+
+	<div class="container">
+		<h1>Welcome</h1>
+		<form name="registForm" class="form" onsubmit="return validateForm()" action="account?reqType=ADD_ACCOUNT_INFO" method="post">
+			<input type="text" id="account_name" name="account_name" placeholder="Username">
+			<input type="password" id="account_pass" name="account_pass" placeholder="Password">
+			<input type="password" id="account_pass_repeat" name="account_pass_repeat" placeholder="Repeat Password">
+			<button type="submit" id="login-button">Register</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+</div>
+
+<script type="text/javascript" src="dist/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+/* 	$('#login-button').click(function(event){
+		event.preventDefault();
+		$('form').fadeOut(500);
+		$('.wrapper').addClass('form-success');
+	}); */
+
+	<!--表单验证-->
+	function validateForm(){
+		var x=document.forms["registForm"]["account_name"].value;
+		var y=document.forms["registForm"]["account_pass"].value;
+		var z=document.forms["registForm"]["account_pass_repeat"].value;
+		if (x==null || x=="")
+		{
+		  alert("姓名必须填写");
+		  return false;
+		}
+		if (y==null || y=="")
+		{
+		  alert("密码必须填写");
+		  return false;
+		}
+		if(y!=z){
+			alert("两次密码不一致");
+			return false;
+		}		
+	}
+</script>
+
+</body>
+</html>
