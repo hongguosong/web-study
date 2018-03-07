@@ -334,7 +334,7 @@
 		setInterval(function(){time()},1000); */
 	</script>
 	
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#showRegistModal').click(function(){
 				
@@ -342,6 +342,6 @@
 				$('#registModal').modal('show');
 			});
 		});
-	</script>
+	</script> -->
 </body>
 </html>
